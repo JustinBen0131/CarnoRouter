@@ -1,0 +1,25 @@
+{
+  "claims": [
+    {
+      "claim": "The audited source contained 33,000 human-preference conversations.",
+      "evidence": "separate private cohort receipt",
+      "status": "measured_source_fact"
+    },
+    {
+      "claim": "The strict evaluation cohort contains 120 rows across 60 prompt groups.",
+      "evidence": "report.json dataset receipt",
+      "status": "measured"
+    },
+    {
+      "claim": "Model and threshold selection do not use test data.",
+      "evidence": "model and threshold selection receipts",
+      "status": "verified_contract"
+    },
+    {
+      "claim": "Live autorouting is approved.",
+      "evidence": "deployment_decision.json",
+      "status": "blocked"
+    }
+  ],
+  "schema": "CarnoPublicClaimRegistryV1"
+}

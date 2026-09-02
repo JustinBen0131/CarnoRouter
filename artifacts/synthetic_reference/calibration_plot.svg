@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430" viewBox="0 0 760 430" role="img" aria-label="Calibration bins">
+<rect width="760" height="430" fill="#ffffff"/>
+<text x="380" y="30" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="700">Held-out calibration</text>
+<line x1="70" y1="350" x2="700" y2="350" stroke="#334155"/>
+<line x1="70" y1="100" x2="70" y2="350" stroke="#334155"/>
+<text x="80" y="60" font-family="sans-serif" font-size="12" fill="#2b6cb0">Observed</text>
+<text x="160" y="60" font-family="sans-serif" font-size="12" fill="#d97706">Predicted</text>
+<rect x="90" y="350.00" width="38" height="0.00" fill="#2b6cb0"/>
+<rect x="132" y="336.15" width="38" height="13.85" fill="#d97706"/>
+<text x="130" y="375" text-anchor="middle" font-family="monospace" font-size="10">0.0-0.2</text>
+<rect x="208" y="100.00" width="38" height="250.00" fill="#2b6cb0"/>
+<rect x="250" y="105.59" width="38" height="244.41" fill="#d97706"/>
+<text x="248" y="375" text-anchor="middle" font-family="monospace" font-size="10">0.8-1.0</text>
+</svg>

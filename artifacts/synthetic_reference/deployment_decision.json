@@ -1,0 +1,12 @@
+{
+  "blockers": [
+    "offline historical proxy does not represent current provider quality or price",
+    "test cohort is below the predeclared 200-row minimum",
+    "distribution-shift warnings require a fresh evaluation"
+  ],
+  "live_autorouting": "BLOCKED",
+  "offline_research_artifact": "PASS",
+  "portfolio_evidence": "PASS_WITH_EXPLICIT_LIMITS",
+  "schema": "CarnoDeploymentDecisionV1",
+  "shadow_mode": "REQUIRES_FRESH_CURRENT_PROVIDER_EVALUATION"
+}

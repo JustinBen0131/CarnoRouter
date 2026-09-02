@@ -1,0 +1,19 @@
+{
+  "schema": "CarnoPricingSnapshotV1",
+  "snapshot_id": "normalized-costs-v1",
+  "currency": "normalized_cost_units",
+  "claims_boundary": "Illustrative relative costs only; these are not provider prices or historical spend.",
+  "models": {
+    "cheap": {
+      "fixed_per_request": "1",
+      "input_per_million_tokens": "0",
+      "output_per_million_tokens": "0"
+    },
+    "strong": {
+      "fixed_per_request": "20",
+      "input_per_million_tokens": "0",
+      "output_per_million_tokens": "0"
+    }
+  }
+}
+

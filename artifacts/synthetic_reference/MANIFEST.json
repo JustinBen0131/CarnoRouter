@@ -1,0 +1,63 @@
+{
+  "artifacts": {
+    "bootstrap_intervals.json": {
+      "bytes": 1015,
+      "sha256": "7a01f18b386a6c9e5372b642effc25cf3464ce17428550d3455b3b3d59fc95b8"
+    },
+    "calibration_plot.svg": {
+      "bytes": 1081,
+      "sha256": "1dc9869f1cf92bf2143fbadd6b661f74a6c404f374d2045868f72235d3b77239"
+    },
+    "cost_quality_frontier.svg": {
+      "bytes": 1315,
+      "sha256": "26a38be2ac94610326a99aa5c3685c89991d81638daa61d49249a5318a41d9ff"
+    },
+    "deployment_decision.json": {
+      "bytes": 459,
+      "sha256": "7134189732bceab31f9348e7f7d9d9bd8b0b46ed24db6416584a90c326f54d57"
+    },
+    "model_bundle.json": {
+      "bytes": 125680,
+      "sha256": "e06f4b7c21d2c304bdb985ddcfe568f2e8d16ba28d301df03b1aa33dc5699036"
+    },
+    "model_card.json": {
+      "bytes": 4956,
+      "sha256": "c9c365bf6a2d4d271aebce372516a1cbc428b3672930ee5c213f463565061559"
+    },
+    "predictions.csv": {
+      "bytes": 3891,
+      "sha256": "1584478881ce457c6c1859ea0df49b23ec3a463fd4b8bb1ae6f9c9549a3d3c91"
+    },
+    "public_claims.json": {
+      "bytes": 745,
+      "sha256": "29d1d8b3506da165c75218ceb4299b376529771f87e5be0c9f8b6603c94f098b"
+    },
+    "report.html": {
+      "bytes": 5385,
+      "sha256": "6f6c599e5c9102602cb3e422636fd55ea278f04ddc1a437f7df73dfa512fcbd7"
+    },
+    "report.json": {
+      "bytes": 27956,
+      "sha256": "fffe9579e786882430a41a1613b50b21befb4774690da28f15be68bfeccfe9b8"
+    },
+    "report.md": {
+      "bytes": 1859,
+      "sha256": "f46706e82f20158d3d8dd98772bc05a4d01173c1b9d7b3b84cb1fefb3b8c746f"
+    },
+    "slice_diagnostics.csv": {
+      "bytes": 607,
+      "sha256": "35a543194234cba3ef7489c8d82442e30c5cd291ed0b874cb4c0f75d1a12f588"
+    },
+    "split_manifest.csv": {
+      "bytes": 20536,
+      "sha256": "84db1cffc85e61769c70425b02d233c9cd01ed00d2d399207ead80f395006cda"
+    },
+    "threshold_curve.csv": {
+      "bytes": 8767,
+      "sha256": "5a1195531c194467d86d32cafac00c3a7655c88fdb8705fac33ad6d3b5a2d767"
+    }
+  },
+  "benchmark_id": "carno_offline_cost_quality_v2",
+  "reproduction": "PYTHONPATH=src python3 -m carno_router benchmark --data <csv> --pricing <snapshot> --output <dir>",
+  "schema": "CarnoBenchmarkArtifactManifestV2"
+}

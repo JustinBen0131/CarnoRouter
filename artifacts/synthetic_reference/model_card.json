@@ -1,0 +1,171 @@
+{
+  "calibration": {
+    "fingerprint": "a8d5fb942e0708be5d2bfa3c5e2482052f036c7a2862eeffa83627bd26b55531",
+    "fit_data": "out_of_fold_train_predictions_only",
+    "method": "five_fold_group_stratified_oof_platt_scaling",
+    "test_metrics": {
+      "bins": [
+        {
+          "count": 4,
+          "high": 0.2,
+          "low": 0.0,
+          "observed": 0.0,
+          "predicted": 0.0553966
+        },
+        {
+          "count": 0,
+          "high": 0.4,
+          "low": 0.2,
+          "observed": null,
+          "predicted": null
+        },
+        {
+          "count": 0,
+          "high": 0.6,
+          "low": 0.4,
+          "observed": null,
+          "predicted": null
+        },
+        {
+          "count": 0,
+          "high": 0.8,
+          "low": 0.6,
+          "observed": null,
+          "predicted": null
+        },
+        {
+          "count": 14,
+          "high": 1.0,
+          "low": 0.8,
+          "observed": 1.0,
+          "predicted": 0.9776378
+        }
+      ],
+      "brier": 0.00108413,
+      "ece_5": 0.02970318,
+      "log_loss": 0.03026185,
+      "pr_auc": 1.0,
+      "roc_auc": 1.0
+    }
+  },
+  "deployment_decision": {
+    "blockers": [
+      "offline historical proxy does not represent current provider quality or price",
+      "test cohort is below the predeclared 200-row minimum",
+      "distribution-shift warnings require a fresh evaluation"
+    ],
+    "live_autorouting": "BLOCKED",
+    "offline_research_artifact": "PASS",
+    "portfolio_evidence": "PASS_WITH_EXPLICIT_LIMITS",
+    "schema": "CarnoDeploymentDecisionV1",
+    "shadow_mode": "REQUIRES_FRESH_CURRENT_PROVIDER_EVALUATION"
+  },
+  "feature_boundary": "prompt text only; no candidate answers or assistant responses",
+  "intended_use": "offline research evaluation and shadow-policy scoring",
+  "model": {
+    "family": "train_selected_prompt_only_sparse_logistic",
+    "feature_count": 1638,
+    "fingerprint": "8335903d9d1af2b7e3f8b77ace75bb7e1ad9f7134a4ccd627269b1b8dce0673b",
+    "network_access": false,
+    "selected_specification": {
+      "char_ngram_max": 5,
+      "char_ngram_min": 3,
+      "l2": 0.02,
+      "max_features": 4096,
+      "name": "hybrid__4096__l2_0_02",
+      "word_ngram_max": 2
+    },
+    "selection_receipt": {
+      "calibration_data_used": false,
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "oof_metrics_before_calibration": {
+            "brier": 0.0544672,
+            "log_loss": 0.26519534,
+            "pr_auc": 1.0,
+            "roc_auc": 1.0
+          },
+          "specification": {
+            "char_ngram_max": null,
+            "char_ngram_min": null,
+            "l2": 0.02,
+            "max_features": 2048,
+            "name": "word_1_2__2048__l2_0_02",
+            "word_ngram_max": 2
+          }
+        },
+        {
+          "oof_metrics_before_calibration": {
+            "brier": 0.05271745,
+            "log_loss": 0.26032516,
+            "pr_auc": 1.0,
+            "roc_auc": 1.0
+          },
+          "specification": {
+            "char_ngram_max": 5,
+            "char_ngram_min": 3,
+            "l2": 0.02,
+            "max_features": 2048,
+            "name": "hybrid__2048__l2_0_02",
+            "word_ngram_max": 2
+          }
+        },
+        {
+          "oof_metrics_before_calibration": {
+            "brier": 0.05271745,
+            "log_loss": 0.26032516,
+            "pr_auc": 1.0,
+            "roc_auc": 1.0
+          },
+          "specification": {
+            "char_ngram_max": 5,
+            "char_ngram_min": 3,
+            "l2": 0.02,
+            "max_features": 4096,
+            "name": "hybrid__4096__l2_0_02",
+            "word_ngram_max": 2
+          }
+        },
+        {
+          "oof_metrics_before_calibration": {
+            "brier": 0.12934703,
+            "log_loss": 0.44561603,
+            "pr_auc": 1.0,
+            "roc_auc": 1.0
+          },
+          "specification": {
+            "char_ngram_max": 5,
+            "char_ngram_min": 3,
+            "l2": 0.08,
+            "max_features": 4096,
+            "name": "hybrid__4096__l2_0_08",
+            "word_ngram_max": 2
+          }
+        }
+      ],
+      "objective": "maximize_roc_auc_then_minimize_brier_then_log_loss",
+      "schema": "CarnoTrainOnlyModelSelectionReceiptV1",
+      "selected": {
+        "oof_metrics_before_calibration": {
+          "brier": 0.05271745,
+          "log_loss": 0.26032516,
+          "pr_auc": 1.0,
+          "roc_auc": 1.0
+        },
+        "specification": {
+          "char_ngram_max": 5,
+          "char_ngram_min": 3,
+          "l2": 0.02,
+          "max_features": 4096,
+          "name": "hybrid__4096__l2_0_02",
+          "word_ngram_max": 2
+        }
+      },
+      "selection_data": "group_stratified_out_of_fold_train_predictions_only",
+      "test_data_used": false
+    }
+  },
+  "prohibited_use": "unsupervised live provider routing without a fresh provider evaluation and release review",
+  "schema": "CarnoModelCardV1"
+}

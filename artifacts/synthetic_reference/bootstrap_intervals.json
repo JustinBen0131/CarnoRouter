@@ -1,0 +1,47 @@
+{
+  "method": "paired_prompt_group_bootstrap_stratified_by_model_pair",
+  "modeled_cost_savings_vs_always_strong": {
+    "lower_95": 0.0,
+    "median": 0.0,
+    "upper_95": 0.0
+  },
+  "preference_accuracy": {
+    "lower_95": 0.44444444,
+    "median": 0.77777778,
+    "upper_95": 1.0
+  },
+  "preference_accuracy_delta_vs": {
+    "deterministic_random_matched_rate": {
+      "lower_95": 0.0,
+      "median": 0.0,
+      "upper_95": 0.0
+    },
+    "prompt_length_logistic": {
+      "lower_95": -0.33333334,
+      "median": -0.05555555,
+      "upper_95": 0.22222222
+    },
+    "routed_point_estimate": {
+      "lower_95": -0.55555556,
+      "median": -0.22222222,
+      "upper_95": 0.0
+    }
+  },
+  "quality_delta_vs_always_strong": {
+    "lower_95": 0.0,
+    "median": 0.0,
+    "upper_95": 0.0
+  },
+  "replicates": 500,
+  "seed": 1729,
+  "strong_call_rate": {
+    "lower_95": 1.0,
+    "median": 1.0,
+    "upper_95": 1.0
+  },
+  "strong_needed_recall": {
+    "lower_95": 1.0,
+    "median": 1.0,
+    "upper_95": 1.0
+  }
+}
