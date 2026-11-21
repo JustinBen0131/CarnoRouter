@@ -9,6 +9,7 @@ description = "Risk-controlled routing and research-agent evaluation laboratory"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{name = "Justin Bennett"}]
+license = {text = "MIT"}
 dependencies = []
 
 [project.scripts]
