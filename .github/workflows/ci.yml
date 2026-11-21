@@ -22,4 +22,7 @@ jobs:
       - run: python tools/generate_synthetic_fixture.py
       - run: PYTHONPATH=src python -m unittest discover -s tests -v
       - run: PYTHONPATH=src python tools/reproducibility_gate.py
+      # The scan pins the size and hash of four synthetic stress artifacts. They are build outputs, so a clean
+      # clone must rebuild them first; the scan then proves that they reproduce byte for byte.
+      - run: PYTHONPATH=src python tools/build_research_stress_lab.py --output artifacts/research_stress_v1 --replicates 100 --root-seed 2831729
       - run: python tools/secret_gate.py .
