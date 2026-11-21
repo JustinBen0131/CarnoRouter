@@ -51,3 +51,18 @@ The resulting private cohort has 576 rows, 570 prompt groups, 379 strong-tier wi
 6. Run deterministic tests and the reproducibility gate from a clean clone.
 7. Pin dependency, model, dataset, and pricing versions for any empirical claim.
 8. Manually review the report for personal data, cloud identifiers, raw prompts, and unsupported claims.
+
+### Gate status on November 21, 2026
+
+The repository became public on this date. The gates above are kept as written. Their status is recorded here so that the page stays true for a public reader. A gate is marked open until there is evidence that it is met.
+
+| Gate | Status |
+|---|---|
+| 1. License | Open. No license has been granted and all rights are reserved. |
+| 2. Authorship and attribution | Open. Awaits the author's review of every adapted implementation. |
+| 3. Legacy credentials | Open. This concerns the legacy repository, which is not part of this package. This repository has a new Git history and holds none of that material. The check belongs to the credential owner. |
+| 4. Secret scan | In part. `tools/secret_gate.py` scans the tracked files in CI on every push. A scan of Git objects and of built distributions is open. |
+| 5. Dataset freeze | In part. The private cohort is not redistributed. Its source hash and cohort hash are recorded above. The public reference run is synthetic and ships its manifest and split manifest under `artifacts/synthetic_reference/`. |
+| 6. Deterministic tests and reproducibility gate | Run from a clean checkout by the CI workflow on every push, for Python 3.10, 3.11 and 3.12. |
+| 7. Version pins | The package has no third-party runtime dependency. Model, dataset and pricing pins stay required for any new empirical claim. |
+| 8. Manual report review | Open. Awaits the author's review. |

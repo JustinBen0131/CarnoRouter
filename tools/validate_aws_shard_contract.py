@@ -56,10 +56,16 @@ def main() -> int:
     parser.add_argument("--package", type=Path, default=ROOT / "build" / "aws" / "carno_the283_lambda.zip")
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts" / "aws_lambda_shard_contract_validation.json")
     parser.add_argument("--core-output", type=Path, default=ROOT / "artifacts" / "aws_lambda_shard_contract_core.json")
+    parser.add_argument(
+        "--stress",
+        type=Path,
+        default=ROOT / "artifacts" / "research_stress_v1",
+        help="stress-lab output directory holding stress_evaluation.json and trials.jsonl",
+    )
     args = parser.parse_args()
     plan = json.loads((ROOT / "cloud" / "aws" / "execution_plan.json").read_text(encoding="utf-8"))
-    evaluation = json.loads((ROOT / "artifacts" / "research_stress_v1" / "stress_evaluation.json").read_text(encoding="utf-8"))
-    local = local_receipts(ROOT / "artifacts" / "research_stress_v1" / "trials.jsonl")
+    evaluation = json.loads((args.stress / "stress_evaluation.json").read_text(encoding="utf-8"))
+    local = local_receipts(args.stress / "trials.jsonl")
     handler = load_handler()
     shard_count = int(plan["shard_count"])
     started = time.perf_counter_ns()

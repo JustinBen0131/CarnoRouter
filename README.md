@@ -85,4 +85,6 @@ For dollar claims, the pricing file must be a dated, pinned provider-price snaps
 
 ## Publication status
 
-Local clean-room research artifact. Live autorouting is blocked by the current evidence receipt, and publication is separately blocked until Justin chooses a license, confirms provenance boundaries, completes a credential-rotation audit for the legacy repository, and passes the release gates in [SOURCE_PROVENANCE.md](SOURCE_PROVENANCE.md) and [SECURITY.md](SECURITY.md).
+Public since November 21, 2026 as a clean-room research artifact. Live autorouting remains blocked by the current evidence receipt. The status of each release gate is recorded in [SOURCE_PROVENANCE.md](SOURCE_PROVENANCE.md), and the security policy is in [SECURITY.md](SECURITY.md).
+
+No license has been granted. All rights are reserved until the author selects one, as stated in [NOTICE.md](NOTICE.md).

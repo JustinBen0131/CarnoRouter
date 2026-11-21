@@ -144,46 +144,48 @@ def main() -> int:
             raise SystemExit("FAIL: stress benchmark manufactured a human-agreement claim")
         if '"actual_provider_accounting": "NOT_RUN"' not in stress_evaluation:
             raise SystemExit("FAIL: stress benchmark manufactured provider accounting")
-    with tempfile.TemporaryDirectory() as first_aws, tempfile.TemporaryDirectory() as second_aws:
-        aws_roots = (Path(first_aws), Path(second_aws))
-        for aws_root in aws_roots:
-            package_path = aws_root / "lambda.zip"
-            subprocess.run(
-                [
-                    sys.executable,
-                    str(ROOT / "tools" / "build_aws_lambda_package.py"),
-                    "--output",
-                    str(package_path),
-                ],
-                cwd=ROOT,
-                env=env,
-                check=True,
-                stdout=subprocess.DEVNULL,
-            )
-            subprocess.run(
-                [
-                    sys.executable,
-                    str(ROOT / "tools" / "validate_aws_shard_contract.py"),
-                    "--package",
-                    str(package_path),
-                    "--output",
-                    str(aws_root / "execution.json"),
-                    "--core-output",
-                    str(aws_root / "core.json"),
-                ],
-                cwd=ROOT,
-                env=env,
-                check=True,
-                stdout=subprocess.DEVNULL,
-            )
-        if hashlib.sha256((aws_roots[0] / "lambda.zip").read_bytes()).hexdigest() != hashlib.sha256(
-            (aws_roots[1] / "lambda.zip").read_bytes()
-        ).hexdigest():
-            raise SystemExit("FAIL: repeated AWS Lambda packages are not byte-identical")
-        if hashlib.sha256((aws_roots[0] / "core.json").read_bytes()).hexdigest() != hashlib.sha256(
-            (aws_roots[1] / "core.json").read_bytes()
-        ).hexdigest():
-            raise SystemExit("FAIL: repeated AWS shard-contract cores are not byte-identical")
+        with tempfile.TemporaryDirectory() as first_aws, tempfile.TemporaryDirectory() as second_aws:
+            aws_roots = (Path(first_aws), Path(second_aws))
+            for aws_root in aws_roots:
+                package_path = aws_root / "lambda.zip"
+                subprocess.run(
+                    [
+                        sys.executable,
+                        str(ROOT / "tools" / "build_aws_lambda_package.py"),
+                        "--output",
+                        str(package_path),
+                    ],
+                    cwd=ROOT,
+                    env=env,
+                    check=True,
+                    stdout=subprocess.DEVNULL,
+                )
+                subprocess.run(
+                    [
+                        sys.executable,
+                        str(ROOT / "tools" / "validate_aws_shard_contract.py"),
+                        "--package",
+                        str(package_path),
+                        "--output",
+                        str(aws_root / "execution.json"),
+                        "--core-output",
+                        str(aws_root / "core.json"),
+                        "--stress",
+                        first_stress,
+                    ],
+                    cwd=ROOT,
+                    env=env,
+                    check=True,
+                    stdout=subprocess.DEVNULL,
+                )
+            if hashlib.sha256((aws_roots[0] / "lambda.zip").read_bytes()).hexdigest() != hashlib.sha256(
+                (aws_roots[1] / "lambda.zip").read_bytes()
+            ).hexdigest():
+                raise SystemExit("FAIL: repeated AWS Lambda packages are not byte-identical")
+            if hashlib.sha256((aws_roots[0] / "core.json").read_bytes()).hexdigest() != hashlib.sha256(
+                (aws_roots[1] / "core.json").read_bytes()
+            ).hexdigest():
+                raise SystemExit("FAIL: repeated AWS shard-contract cores are not byte-identical")
     print(
         f"PASS: {len(first_hashes)} routing artifacts, {len(first_lab_hashes)} research-lab artifacts, "
         f"and {len(first_stress_hashes)} stress artifacts are byte-identical; reference-oracle audit byte-identical and in agreement; raw prompt absent; "
