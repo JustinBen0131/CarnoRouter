@@ -9,6 +9,8 @@
 
 This repository was authored from a clean design contract. It does not copy the legacy `.git` directory, uncommitted working tree, web UI, cloud infrastructure, databases, raw datasets, model artifacts, or secret-bearing configuration.
 
+Justin Bennett wrote this repository with the help of AI coding assistants, including ChatGPT.
+
 ## Concepts retained
 
 - route requests between lower-cost and stronger model tiers;
@@ -59,7 +61,7 @@ The repository became public on this date. The gates above are kept as written. 
 | Gate | Status |
 |---|---|
 | 1. License | Met. The author selected the MIT License on this date (`LICENSE`). |
-| 2. Authorship and attribution | Open. A text search of the tracked files on this date found no third-party copyright or license notice. The author's review of every adapted implementation is still required. |
+| 2. Authorship and attribution | Open. A text search of the tracked files on this date found no third-party copyright or license notice. The author states that the code was written with the help of AI coding assistants, including ChatGPT. The author's review of every adapted implementation is still required. |
 | 3. Legacy credentials | Open. This concerns the legacy repository, which is not part of this package. This repository has a new Git history and holds none of that material. The check belongs to the credential owner. |
 | 4. Secret scan | In part. `tools/secret_gate.py` scans the tracked files in CI on every push. A scan of Git objects and of built distributions is open. |
 | 5. Dataset freeze | In part. The private cohort is not redistributed. Its source hash and cohort hash are recorded above. The public reference run is synthetic and ships its manifest and split manifest under `artifacts/synthetic_reference/`. |

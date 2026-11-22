@@ -88,3 +88,5 @@ For dollar claims, the pricing file must be a dated, pinned provider-price snaps
 Public since November 21, 2026 as a clean-room research artifact. Live autorouting remains blocked by the current evidence receipt. The status of each release gate is recorded in [SOURCE_PROVENANCE.md](SOURCE_PROVENANCE.md), and the security policy is in [SECURITY.md](SECURITY.md).
 
 Released under the [MIT License](LICENSE). The license covers the code and the synthetic artifacts in this repository. [NOTICE.md](NOTICE.md) lists what is not redistributed here.
+
+Written by Justin Bennett with the help of AI coding assistants, including ChatGPT.
